@@ -12,7 +12,6 @@ variable "number" {
     default = 3
 }
 data "aws_ami" "example" {
-  executable_users = ["self"]
   most_recent      = true
   name_regex       = "Mycentosimage-7"
   owners           = ["self"]
