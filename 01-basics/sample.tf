@@ -1,3 +1,7 @@
+provider "aws" {
+  
+}
+
 
 variable "name" {
     default = "Helloo"
