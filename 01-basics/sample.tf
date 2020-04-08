@@ -33,9 +33,15 @@ data "aws_ami" "example" {
   }
 }
 resource "aws_instance" "web" {
-    ami = "${data.aws_ami.example.image_id}"
+    ami           = "${data.aws_ami.example.image_id}"
     instance_type = "t2.micro"
-
+    subnet_id     = "subnet-5cf86810"
+    vpc_security_group_ids = ["sg-041ad910ba6ea2316"]
+     key_name        = "devops"
+ tags = {
+    Name = "Helloworld"
+ }
+}
 output "name" {
   value = "${var.name}"
 }
