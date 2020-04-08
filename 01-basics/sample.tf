@@ -32,6 +32,10 @@ data "aws_ami" "example" {
     values = ["hvm"]
   }
 }
+resource "aws_instance" "web" {
+    ami ="${data.aws_ami.example.image_id"}
+    instance_type = "t2.micro"
+
 output "name" {
   value = "${var.name}"
 }
