@@ -11,6 +11,7 @@ variable "name" {
 variable "number" {
     default = 3
 }
+
 data "aws_ami" "example" {
   most_recent      = true
   name_regex       = "Mycentosimage-7"
@@ -46,4 +47,7 @@ output "name" {
 }
 output "ami" {
   value = "${data.aws_ami.example.image_id}"
+}
+output "instance_public_ip" {
+  value = "${aws_instance.web.public_ip}"
 }
