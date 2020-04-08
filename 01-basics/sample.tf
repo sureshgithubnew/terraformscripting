@@ -4,7 +4,7 @@ variable "name" {
 
 }
 
-varaible "number" {
+variable "number" {
     default = 3
 }
 output "name" {
