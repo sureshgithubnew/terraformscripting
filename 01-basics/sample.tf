@@ -7,6 +7,30 @@ variable "name" {
 variable "number" {
     default = 3
 }
+data "aws_ami" "example" {
+  executable_users = ["self"]
+  most_recent      = true
+  name_regex       = "Mycentosimage-7"
+  owners           = ["self"]
+
+  filter {
+    name   = "name"
+    values = [Mycentosimage-7]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
 output "name" {
   value = "${var.name}"
+}
+output "ami" {
+  value = "${data.aws_ami.example.image_id}"
 }
