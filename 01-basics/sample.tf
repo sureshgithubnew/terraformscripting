@@ -33,7 +33,7 @@ data "aws_ami" "example" {
   }
 }
 resource "aws_instance" "web" {
-    ami ="${data.aws_ami.example.image_id"}
+    ami = "${data.aws_ami.example.image_id"}
     instance_type = "t2.micro"
 
 output "name" {
