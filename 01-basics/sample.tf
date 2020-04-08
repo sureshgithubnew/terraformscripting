@@ -19,7 +19,7 @@ data "aws_ami" "example" {
 
   filter {
     name   = "name"
-    values = [Mycentosimage-7]
+    values = ["Mycentosimage-7"]
   }
 
   filter {
